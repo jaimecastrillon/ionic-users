@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Listado de usuarios
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+    <ion-list *ngIf="!hasError">
+      <ion-item *ngFor="let u of users">
+        <ion-label>
+          ID: {{u.id}}<br>
+          Nombre: {{u.nombre}}<br>
+          Edad: {{u.edad}}<br>
+          Género: {{u.genero}}<br>
+          Correo electrónico:<br><b>{{u.email}}</b><br>
+          Localidad: {{u.localidad}}<br>
+          Teléfono: {{u.telefono}}<br>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-list *ngIf="hasError">
+      <ion-label>No hay conexión con el servidor.</ion-label>
+    </ion-list>
+  </div>
+</ion-content>
